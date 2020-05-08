@@ -5,16 +5,19 @@ abstract class CryptoState extends Equatable {
   const CryptoState();
 }
 
+//Initial
 class InitialCryptoState extends CryptoState {
   @override
   List<Object> get props => [];
 }
 
+// Fetch From Api
 class CryptoLoading extends CryptoState {
   @override
   List<Object> get props => [];
 }
 
+// Retrieved Data
 class CryptoLoaded extends CryptoState {
   final List<Coin> coins;
 
@@ -27,6 +30,7 @@ class CryptoLoaded extends CryptoState {
   String toString() => 'CryptoLoaded {coins: $coins}';
 }
 
+// API Request Error
 class CryptoError extends CryptoState {
   @override
   List<Object> get props => [];
