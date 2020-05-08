@@ -8,6 +8,11 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^0.1.2
+  equatable: ^1.1.1
+  flutter_bloc: ^4.0.0
+  bloc: ^4.0.0
+  http: ^0.12.1
+
 
 dev_dependencies:
   flutter_test:
