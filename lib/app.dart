@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutterapipagination/blocs/coins/crypto_bloc.dart';
+import 'package:flutterapipagination/blocs/coins/crypto_event.dart';
+import 'package:flutterapipagination/repositories/repository.dart';
 import 'package:flutterapipagination/ui/home.dart';
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-
-        primarySwatch: Colors.blue,
+    return BlocProvider(
+      create: (_) => CryptoBloc(
+        cryptoRepository: CryptoRepository(),
+      )..add(
+          AppStarted(),
+        ),
+      child: MaterialApp(
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: HomePage(),
       ),
-      home: HomePage(),
     );
   }
 }
