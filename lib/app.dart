@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
           AppStarted(),
         ),
       child: MaterialApp(
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
+        theme: ThemeData(brightness: Brightness.dark,
+          primarySwatch: Colors.red,
         ),
         home: HomePage(),
       ),

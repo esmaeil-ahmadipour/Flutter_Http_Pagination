@@ -16,11 +16,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Online Pagination"),
+        title: Text("Online Pagination" ,style: TextStyle(color: Colors.purple),),
       ),
       body: BlocBuilder<CryptoBloc,CryptoState>(
           builder: (context, state) {
             return Container(
+              color: Colors.black,
               width: double.infinity,
               child: _buildBody(state),
             );
@@ -47,6 +48,8 @@ class _HomePageState extends State<HomePage> {
             controller: _scrollController,
             itemCount: state.coins.length,
             itemBuilder: (BuildContext context, int index) {
+              if (index.isOdd) return new Divider(color: Colors.purple); // notice color is added to style divider
+
               final coin = state.coins[index];
               return ListTile(
                 leading: Column(
